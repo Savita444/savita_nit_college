@@ -42,14 +42,11 @@
                                     </div>
                                     @else
                                     <div class="item">
-
                                         <div class="container">
-                                            <img src="{{ Config::get('DocumentConstant.ACHIEVEMENT_VIEW') }}{{ $data_output->fld_gallery_photo }}"
+                                        <div style="color: #545353; padding-left:7px;">{{ $data_output->imageTitle }}</div>
+                                            
+                                        <img src="{{ Config::get('DocumentConstant.AWARDS_VIEW') }}{{ $data_output->fld_gallery_photo }}"
                                                 class="img-responsive" width="400px; height:300px;"><br>
-
-                                            <td>
-                                                <div style="color: #545353;">{{ $data_output->imageTitle }}</div>
-                                            </td>
                                         </div>
                                     </div>
                                     @endif

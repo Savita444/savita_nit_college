@@ -77,7 +77,7 @@
                                                 </td>
                                                 <td>
                                                     <center>
-                                                    <a href="{{ Config::get('DocumentConstant.TIMETABLE_DOC_VIEW') }}{{ $data->file }}" target="_blank" class="btn btn-small "style="color:#fff;background-color:  #015198">
+                                                    <a href="{{ Config::get('DocumentConstant.TIMETABLE_DOC_VIEW') }}{{ $data->file }}" target="_blank" download class="btn btn-small" style="color:#fff;background-color:  #015198">
                                                        Download
                                                     </a>
                                                 </center>

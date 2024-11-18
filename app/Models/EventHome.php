@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NonTeachingStaff extends Model
+class EventHome extends Model
 {
     use HasFactory;
-    protected $table = 'tbl_staff';
+    protected $table = 'event';
     protected $primaryKey = 'id';
     protected $fillable=[];
 }

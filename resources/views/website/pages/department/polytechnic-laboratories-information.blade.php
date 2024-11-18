@@ -46,6 +46,7 @@
                                     </div>
                                     @else
                                     @foreach ($data_output as $data)
+                                    
                                     @if ($data->is_active == 0)
                                     <div class="alert alert-info">
                                         <p class="department-error">Data not available</p>

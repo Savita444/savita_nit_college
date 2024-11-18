@@ -50,9 +50,13 @@
                                     </div>
                                     @else
                                     <div style="margin-left: 20px;">
+                                        <div class="mt-2">
+                                        <div style="color: #545353; padding-left:7px;">{{ $data->imageTitle }}</div>
+                                        </div>
+
                                          <div class="col-lg-4 col-md-4 col-sm-12 mb-5" style="display: flex; justify-content:center; padding-top:20px;">
                                             <div class="card" style="width: 300px;">
-                                                <img src="{{ Config::get('DocumentConstant.EVENTS_VIEW') }}{{ $data->fld_gallery_photo }}" class="card-img-top img-fluid img-thumbnail" alt="{{ $data->Department }}" style="height: 250px;width:auto; object-fit: cover;">
+                                                <img src="{{ Config::get('DocumentConstant.DEPARTMENT_EVENTS_VIEW') }}{{ $data->fld_gallery_photo }}" class="card-img-top img-fluid img-thumbnail" alt="{{ $data->Department }}" style="height: 250px;width:auto; object-fit: cover;">
                                                 
                                             </div>
                                         </div>

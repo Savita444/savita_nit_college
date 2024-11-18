@@ -29,9 +29,9 @@
             color: white;
         }
     </style>
+
     <div class="container-fluid pageHeading-bg" id="iwtPageHeading">
-        <div class="container">
-        </div>
+        <div class="container"></div>
     </div>
     <div class="container-fluid" style="padding-bottom:40px">
         <div class="container card-shadow" style="margin-bottom: 95px;">
@@ -46,8 +46,9 @@
                                     </div>
                                     <div class="col-sm-12" style="padding:0;">
                                         <h4 style="color:green"><strong>Download Syllabus Here....</strong></h4>
-                                        <div class="pull-right"><img src="../up-images/index.php" alt=""
-                                                class="img-responsive"></div>
+                                        <div class="pull-right">
+                                            <img src="../up-images/index.php" alt="" class="img-responsive">
+                                        </div>
                                     </div>
 
                                     <div class="widget-content">
@@ -55,61 +56,59 @@
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        <center>Semister</center>
+                                                        <center>Semester</center>
                                                     </th>
                                                     <th class="td-actions"></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
-                                                <?php
-
                                                 @if (isset($error))
-                                                    <div>
-                                                        {{ $error }}
-                                                    </div>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <div>{{ $error }}</div>
+                                                        </td>
+                                                    </tr>
                                                 @else
                                                     @if (!$data_output)
-                                                        <div>
-                                                             <p class="department-error">Data not available</p>
-                                                        </div>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                <p class="department-error">Data not available</p>
+                                                            </td>
+                                                        </tr>
                                                     @else
                                                         @if ($data_output->is_active == 0)
-                                                            <div>
-                                                                 <p class="department-error">Data not available</p>
-                                                            </div>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <p class="department-error">Data not available</p>
+                                                                </td>
+                                                            </tr>
                                                         @else
                                                             <tr>
                                                                 <td>{{ $data_output->semister }}</td>
-                                                                <td> <a href="{{ Config::get('DocumentConstant.SYLLABUS_DOC_VIEW') }}{{ $data_output->file }}"
-                                                                        target="_blank" class="btn btn-small btn-primary">
+                                                                <td>
+                                                                    <a href="{{ Config::get('DocumentConstant.PLAN_VIEW') }}{{ $data_output->file }}"
+                                                                       target="_blank" download class="btn btn-small btn-primary">
                                                                         <i class="btn-icon-only icon-ok">Download</i>
-                                                                    </a></td>
+                                                                    </a>
+                                                                </td>
                                                             </tr>
                                                         @endif
                                                     @endif
                                                 @endif
                                             </tbody>
                                         </table>
-
                                     </div> <!-- /widget-content -->
-
                                 </div> <!-- /widget -->
-                            </div>
-
-
-                            <div>
                             </div>
                         </div>
                     </div><!-- /.row -->
+
                     <div class="row outer-white">
                         <div class="col-sm-12">
                             <div>
                                 <h3><strong></strong></h3>
                             </div>
                             <div class="table-responsive">
-
-
                                 <p><strong>&nbsp;</strong></p>
                                 <p>&nbsp;</p>
                             </div>

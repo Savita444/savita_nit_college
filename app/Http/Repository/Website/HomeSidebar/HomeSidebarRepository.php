@@ -22,7 +22,8 @@ use App\Models\ {
     IndustrialVisitMentor,
     FeesRegulatingAuthority,
     TrainingPlacement,
-    NonTeachingStaff
+    NonTeachingStaff,
+    EventHome
     
 };
 
@@ -213,9 +214,9 @@ class HomeSidebarRepository  {
     public function getEvent()
     {
         try {
-            $data_output = Events::where('fld_delete', '0')
-            ->where('is_active', '1')
-                ->orderBy('fld_gallery_id', 'desc')
+            $data_output = EventHome::where('fld_delete', '0')
+            // ->where('is_active', '1')
+                ->orderBy('event_id', 'desc')
                 ->get();
             return $data_output;
         } catch (\Exception $e) {
@@ -301,20 +302,53 @@ class HomeSidebarRepository  {
     public function getNonTeachingFaculty()
     {
         try {
-            $dataOutputCategory = NonTeachingStaff::join('designation', 'non_teaching_staff.Designation_id', '=', 'designation.Designation_id')
+            $dataOutputCategory = NonTeachingStaff::join('department', 'department.id', '=', 'tbl_staff.Department_id')
+            ->join('designation', 'tbl_staff.Designation_id', '=', 'designation.Designation_id')
+            ->select(
+                'tbl_staff.fld_staff_id',
+                'tbl_staff.fld_staff_name',
+                'department.id as Department_id',
+                'tbl_staff.Designation_id', 
+                'tbl_staff.fld_staff_qualification', 
+                'tbl_staff.fld_staff_experiance', 
+                'tbl_staff.fld_staff_photo', 
+                'department.Department',
+                'designation.Designation',
+                'tbl_staff.fld_staff', 
+                'tbl_staff.is_active' 
+            )
+            ->where('tbl_staff.fld_delete', '0')
+            ->orderBy('tbl_staff.fld_staff_id', 'desc')
+            ->get(); 
+            return $dataOutputCategory;
+        } catch (\Exception $e) {
+            return $e;
+        }
+    }
+
+    public function getNonTeachingFacultyDepartmentId($id)
+    {
+        try {
+            $dataOutputCategory = Staff::join('department', 'department.id', '=', 'tbl_staff.Department_id')
+                ->join('designation', 'tbl_staff.Designation_id', '=', 'designation.Designation_id')
                 ->select(
-                    'non_teaching_staff.non_teaching_staff_id',
-                    'non_teaching_staff.name',
-                    'non_teaching_staff.Designation_id', 
-                    'non_teaching_staff.qualification', 
-                    'non_teaching_staff.mobile', 
-                    'non_teaching_staff.experiance',
-                    'non_teaching_staff.photo', 
+                    'tbl_staff.fld_staff_id',
+                    'tbl_staff.fld_staff_name',
+                    'department.id as Department_id',
+                    'tbl_staff.Designation_id', 
+                    'tbl_staff.fld_staff_qualification', 
+                    'tbl_staff.fld_staff_experiance', 
+                    'tbl_staff.fld_staff_photo', 
+                    'department.Department',
                     'designation.Designation',
-                    'non_teaching_staff.is_active' 
+                    'tbl_staff.fld_staff', 
+                    'tbl_staff.is_active' 
                 )
-                ->orderBy('non_teaching_staff.non_teaching_staff_id', 'desc')
+                ->where('department.id', $id)
+                ->where('tbl_staff.fld_delete', '0')
+                ->orderBy('tbl_staff.fld_staff_id', 'desc')
                 ->get(); 
+
             return $dataOutputCategory;
         } catch (\Exception $e) {
             return $e;

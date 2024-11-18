@@ -61,7 +61,6 @@
                                         <strong>Teaching Staff :-</strong>
                                     </div>
                                     <center>
-                                     
                                         <div class="table-responsive p-3 pt-2">
                                             <!-- Add this wrapper -->
 
@@ -129,10 +128,7 @@
                                         <strong>Non-Teaching Staff :-</strong>
                                     </div>
                                     <center>
-                                        
                                         <div class="table-responsive p-3 pt-2">
-                                            <!-- Add this wrapper -->
-
                                             <table id="example11"
                                                 class="table display responsive nowrap table-striped table-hover table-bordered border-dark"
                                                 style="width:100%;">

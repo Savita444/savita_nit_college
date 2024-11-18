@@ -61,10 +61,10 @@
                                                     <td class="text-center">
                                                         {{ $loop->iteration }}
                                                     </td>
-                                                    <th>{{ $data->title }}</th>
+                                                    <td>{{ $data->title }}</td>
                                                     <td class="text-center">
-                                                        <a href="{{ Config::get('DocumentConstant.EVENTS_DOC_VIEW') }}{{ $data->file }}"
-                                                            target="_blank" class="btn btn-small download-btn1 btn-icon-only icon-ok " style="color:#fff; background-color:  #015198">
+                                                        <a href="{{ Config::get('DocumentConstant.EVENTS_VIEW') }}{{ $data->file }}"
+                                                            target="_blank" download class="btn btn-small download-btn1 btn-icon-only icon-ok " style="color:#fff; background-color:  #015198">
                                                             Download
                                                         </a>
                                                     </td>

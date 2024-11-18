@@ -92,7 +92,7 @@ class DepartmentRepository  {
                 ->where('curriculum.syllabus_delete', 0) 
                 ->orderBy('curriculum.curriculum_id', 'desc')
                 ->get(); 
-             
+            // dd($dataOutputCategory); die;
             return $dataOutputCategory;
         } catch (\Exception $e) {
             return $e;
@@ -311,6 +311,7 @@ class DepartmentRepository  {
                     'tbl_sa_members.is_active'
                 )
                 ->where('department.id', $id) // Filter by the provided ID
+                ->where('tbl_sa_members.fld_delete', '0')
                 ->orderBy('tbl_sa_members.fld_bm_id', 'desc')
                 ->get();
     
@@ -330,6 +331,7 @@ class DepartmentRepository  {
             ->first();
              
             return $dataOutputCategory;
+            // dd($dataOutputCategory); die;
         } catch (\Exception $e) {
             return $e;
         }
@@ -373,6 +375,7 @@ public function getNewsletter($id)
                 'newsletters.is_active'
             )
             ->where('department.id', $id) // Filter by the provided ID
+            ->where('newsletters.newsletters_delete', '0')
             ->orderBy('newsletters.newsletters_id', 'desc')
             ->get(); 
        
@@ -398,7 +401,8 @@ public function getLaboratoriesInformation($id)
             ->where('tbl_laboratories.fld_delete', '0')
             ->orderBy('tbl_laboratories.fld_laboratories_id', 'desc')
             ->get(); 
-     
+        
+            // dd($dataOutputCategory); 
         return $dataOutputCategory;
     } catch (\Exception $e) {
         return $e;

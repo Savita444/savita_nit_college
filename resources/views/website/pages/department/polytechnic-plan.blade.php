@@ -101,8 +101,8 @@
                                                         <td class="text-center">{{ $data->subject_name }}
                                                         </td>
                                                         <td class="text-center">
-                                                            <a href="{{ Config::get('DocumentConstant.PLAN_VIEW') . $data->file }}"
-                                                                target="_blank" class="btn btn-small "style="color:#fff;background-color:  #015198">
+                                                            <a href="{{ Config::get('DocumentConstant.SYLLABUS_DOC_VIEW') . $data->file }}"
+                                                                target="_blank" download class="btn btn-small "style="color:#fff;background-color:  #015198">
                                                                Download
                                                             </a>
                                                         </td>

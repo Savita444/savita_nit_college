@@ -183,6 +183,7 @@ class HomeSidebarController extends Controller
         $menuFacility = $this->menuFacility;
         $data_output = $this->service->getEvent();
    
+        // dd($data_output); die;
         // Ensure $data_output is defined
         if ($data_output && $data_output->isNotEmpty()) {
             return view('website.pages.home-sidebar.events', compact('data_output', 'menu', 'menuDepartment', 'menuFacility'));
@@ -310,16 +311,19 @@ public function getIndustrialVisitMentor()
     public function getNonTeachingFaculty()
     {
         try {
+
+            
             $menu = $this->menu;
             $menuDepartment = $this->menuDepartment;
             $menuFacility = $this->menuFacility;
             $data_output = $this->service->getNonTeachingFaculty();
+            // dd($data_output); die;
             
             if ($data_output instanceof \Exception) {
-                return view('website.pages.home-sidebar.polytechnic-faculty', compact('menu', 'menuDepartment', 'menuFacility'))->withErrors(['msg' => $data_output->getMessage()]);
+                return view('website.pages.home-sidebar.polytechnic-non-teachning-faculty', compact('menu', 'data_output', 'menuDepartment', 'menuFacility'))->withErrors(['msg' => $data_output->getMessage()]);
             }
     
-            return view('website.pages.home-sidebar.polytechnic-faculty', compact('menu', 'data_output', 'menuDepartment', 'menuFacility'));
+            return view('website.pages.home-sidebar.polytechnic-non-teachning-faculty', compact('menu', 'data_output', 'menuDepartment', 'menuFacility'));
         } catch (\Exception $e) {
             return $e;
         }

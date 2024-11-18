@@ -48,7 +48,7 @@
                                                     </td>
                                                     <td class="text-center">
                                                         <a href="{{ Config::get('DocumentConstant.EXPERT_LECTURE_VIEW') }}{{ $data->file }}"
-                                                            target="_blank" class="btn btn-small download-btn1 btn-icon-only icon-ok " style="color:#fff; background-color:  #015198">
+                                                            target="_blank" download class="btn btn-small download-btn1 btn-icon-only icon-ok " style="color:#fff; background-color:  #015198">
                                                             Download
                                                         </a>
                                                     </td>
