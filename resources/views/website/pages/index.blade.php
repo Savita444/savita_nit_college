@@ -290,11 +290,8 @@
                         <p align="justify">
 
                             <span style="font-size: 16px; color: black;">
-                                <p style="margin-top:15px;padding-left: 10px; padding-right:10px" class="leftspace" align="justify">Dedicated to promote the quality technical
-                                    education through advanced teaching and learning process, high quality research and
-                                    extension to serve the human society for sustainable development by developing
-                                    community, the ability and passion to work wisely, creatively and effectively, for the
-                                    betterment of Humankind</p>
+                                <p style="margin-top:15px;padding-left: 10px; padding-right:10px" class="leftspace" align="justify">Empower students with quality technical education & skills for
+                                    industrial and societal development.</p>
                             </span>
                         </p>
                     </div>
@@ -315,8 +312,11 @@
 
 
                             <span style="font-size:16px; color: black;">
-                                <p style="margin-top:15px;padding-left: 10px; padding-right:10px" align="justify" class="leftspace">To give the quality technical
-                                    education for empowerment of the common masses.</p>
+                                <p style="margin-top:15px;padding-left: 10px; padding-right:10px" align="justify" class="leftspace"><b>M1 : </b> To provide quality technical education to enhance technical
+                                    knowledge & higher education capabilities.
+                                    <b>M2 : </b> To equip students with industry-relevant skills.
+                                    <b>M3 :</b> To encourage students to contribute to societal
+                                    development.</p>
                             </span>
 
 
